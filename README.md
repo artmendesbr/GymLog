@@ -18,7 +18,10 @@ This app helps me log workouts, track progress, and eventually extract personal 
 
 ## 📷 Screenshots
 
-| Homae Page | Routine/Exercise Selector |
+| Home Page | Routine/Exercise Selector |
+|-----------|-----------|
+| ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
+| Home Page | Routine/Exercise Selector |
 |-----------|-----------|
 | ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
 
