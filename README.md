@@ -21,9 +21,10 @@ This app helps me log workouts, track progress, and eventually extract personal 
 | Home Page | Routine/Exercise Selector |
 |-----------|-----------|
 | ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
-| Home Page | Routine/Exercise Selector |
+
+| Log Page | History Page |
 |-----------|-----------|
-| ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
+| ![Log](screenshots/sc-003.jpg) | ![History](screenshots/sc-004.jpg) |
 
 ---
 
