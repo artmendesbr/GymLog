@@ -20,7 +20,7 @@ This app helps me log workouts, track progress, and eventually extract personal 
 
 | Homae Page | Routine/Exercise Selector |
 |-----------|-----------|
-| ![Home](screenshots/sc-001.png) | ![Routine/Exercise](screenshots/sc-002.png) |
+| ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
 
 ---
 
