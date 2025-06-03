@@ -1,4 +1,4 @@
-# GymLog 🏋️ - The Iron Journals
+# GymLog 🏋️
 
 A personal gym activity tracker built with [Appsmith](https://www.appsmith.com/) and hosted on [Neon](https://neon.tech/).  
 This app helps me log workouts, track progress, and eventually extract personal data insights.
@@ -16,17 +16,83 @@ This app helps me log workouts, track progress, and eventually extract personal 
 
 ---
 
-## 📷 Screenshots
+## 🔧 Recent Improvements
 
-| Home Page | Routine/Exercise Selector |
-|-----------|-----------|
-| ![Home](screenshots/sc-001.jpg) | ![Routine/Exercise](screenshots/sc-002.jpg) |
+Over the last updates, GymLog has seen several refinements aimed at improving performance, usability, and clarity of data. Here's a summary of the main changes:
 
-| Log Page | History Page |
-|-----------|-----------|
-| ![Log](screenshots/sc-003.jpg) | ![History](screenshots/sc-004.jpg) |
+### 🎨 1. Improved UI & Layout Responsiveness
+- **Button Enhancements**: All key buttons are now full-width and stretch to fit screen sizes for better mobile and tablet usability.
+- **Modular Layout**: Switched to more container-based design patterns for improved UI modularity, alignment, and future scalability.
+- **Cleaner Interaction Zones**: Inputs and interactive components have better spacing and sizing for easier use during workouts.
+
+### 🔄 2. Smarter Read/Write Strategy
+- **End-of-Workout Sync**: Data is now written to the database only when the workout ends, reducing frequent read/write operations.
+- **Optimized Performance**: This change conserves compute and reduces unnecessary database transactions on Neon.
+
+### 👀 3. Toggle Between Local & DB Data
+- **Visual Fallbacks**: For recent workout history (last 3 logs), the app applies **conditional formatting (highlighting)** to differentiate between:
+  - **Local store values** — used when a workout is still in progress.
+  - **Database values** — used for completed sessions.
+- This provides near-instant feedback without requiring a database round-trip (when the log lacks a saved timestamp).
+- Helps users spot unlogged sets quickly and **reduces the chance of forgetting to log a rep**.
+
+### 📅 4. Optional Date Override for Logs
+- Added a toggle-controlled manual date picker when logging sets.
+- Allows users to **backfill workouts** by choosing a specific date/time for the log.
+- Perfect for cases where you forgot to log a workout or want to import past data.
+
+### 🛠️ 5. Dev Tools Toggle (Settings Menu)
+- Added a developer setting to show/hide internal debug containers using a toggle.
+
+### 📄 6. Server-Side Pagination for History Logs
+- Implemented **server-side pagination** on workout history and logs view.
+- Only fetches the current page of data from the database instead of loading all rows at once.
+- This significantly **reduces read-heavy database operations** and improves loading performance for users with large data histories.
 
 ---
+
+## 📷 Screenshots
+
+| Home Page | Settings |
+|-----------|-----------|
+| ![Home Page](screenshots/sc-005.jpg) | ![Settings](screenshots/sc-006.jpg) |
+
+| Routine/Exercises selection | Log Page |
+|-----------|-----------|
+| ![Routine/Exercise](screenshots/sc-007.jpg) | ![Log Page](screenshots/sc-008.jpg) |
+
+---
+
+## 🚀 Planned Improvements
+
+Development is ongoing, and here are some features planned for upcoming releases:
+
+### 🧩 1. Unified Exercise & Routine Management
+- Revamp and merge the current **Manage Exercises** and **Manage Routines** pages.
+- Create a **centralized interface** to:
+  - Add/edit existing exercises
+  - Assign exercises to routines
+  - Create new routines in the same view
+- Goal: streamline workflow and reduce navigation overhead.
+
+### ✏️ 2. Edit & Delete Log Entries
+- Add support for editing or deleting past log entries — both:
+  - **Committed logs** (saved to the database)
+  - **Uncommitted logs** (in local store, before saving)
+- Useful for correcting mistakes or managing incomplete sets.
+
+### 📊 Future Ideas & Improvements
+
+- **Personal Records (PR) Tracking**  
+  Automatically detect and highlight new PRs (heaviest lift, most reps, etc.) per exercise.
+
+- **Workout Summaries & Stats**  
+  Weekly/monthly summaries with charts: total volume, frequency, and top lifts.
+
+- **Data Export**  
+  Export workout history as CSV or JSON for use in external tools (e.g., spreadsheets, Python notebooks).
+
+___
 
 ## 🗃️ Database Schema
 
